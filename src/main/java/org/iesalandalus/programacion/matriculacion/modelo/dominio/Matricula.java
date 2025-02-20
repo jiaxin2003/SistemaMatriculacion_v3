@@ -78,13 +78,7 @@ public class Matricula {
         return asignaturas;
     }
 
-    public String imprimir() {
 
-        return String.format("idMatricula=%d, curso académico=%s, fecha matriculación=%s, alumno=%s, Asignaturas={ %s}",
-                getIdMatricula(), getCursoAcademico(),
-                getFechaMatriculacion().format(DateTimeFormatter.ofPattern(FORMATO_FECHA)),
-                getAlumno().imprimir(), asignaturasMatricula());
-    }
 
     public LocalDate getFechaAnulacion() {
         return fechaAnulacion;
@@ -190,15 +184,22 @@ public class Matricula {
         return Objects.hashCode(idMatricula);
     }
 
+    public String imprimir() {
+
+        return String.format("idMatricula=%d, curso académico=%s, fecha matriculación=%s, alumno=%s, Asignaturas={ %s}",
+                getIdMatricula(), getCursoAcademico(),
+                getFechaMatriculacion().format(DateTimeFormatter.ofPattern(FORMATO_FECHA)),
+                getAlumno().imprimir(), asignaturasMatricula());
+    }
+
     @Override
     public String toString() {
-        return "Matricula" +
-                "idMatricula=" + idMatricula +
+        return alumno.imprimir() + " Matricula" +
+                ", idMatricula=" + idMatricula +
                 ", cursoAcademico='" + cursoAcademico + '\'' +
                 ", fechaMatriculacion=" + fechaMatriculacion +
                 ", fechaAnulacion=" + fechaAnulacion +
-                ", coleccionAsignaturas=" + coleccionAsignaturas +
-                ", alumno=" + alumno.imprimir();
+                ", coleccionAsignaturas=" + coleccionAsignaturas;
     }
 }
 
