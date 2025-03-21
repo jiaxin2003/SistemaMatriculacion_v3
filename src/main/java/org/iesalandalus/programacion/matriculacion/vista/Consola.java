@@ -96,7 +96,7 @@ public class Consola {
             for (TiposGrado tipo : TiposGrado.values()) {
                 System.out.println(tipo.ordinal() + 1 + " " + tipo.name());
             }
-            opcion = Entrada.entero()-1;
+            opcion = Entrada.entero() - 1;
 
         } while (opcion < 0 || opcion >= TiposGrado.values().length);
 
@@ -110,7 +110,7 @@ public class Consola {
             for (Modalidad modalidad : Modalidad.values()) {
                 System.out.println(modalidad.ordinal() + 1 + " " + modalidad.name());
             }
-            opcion = Entrada.entero()-1;
+            opcion = Entrada.entero() - 1;
         } while (opcion < 0 || opcion >= TiposGrado.values().length);
         return Modalidad.values()[opcion];
     }
@@ -154,7 +154,8 @@ public class Consola {
             System.out.println("Introduce el Anio: ");
             System.out.println("Si tu grado es GradoD el año esta comprendido entre 2 y 3 y si es GradoE el año es 1");
             anio = Entrada.entero();
-        } while (nombre.isBlank() || (tiposGrado == TiposGrado.GRADOD && (anio < 2 || anio > 3)) || (tiposGrado == TiposGrado.GRADOE && anio != 1));
+        } while (nombre.isBlank() || (tiposGrado == TiposGrado.GRADOD && (anio < 2 || anio > 3))
+                || (tiposGrado == TiposGrado.GRADOE && anio != 1));
         if (tiposGrado == TiposGrado.GRADOD) {
             Modalidad modalidad = leerModalidad();
             return new GradoD(nombre, anio, modalidad);
@@ -184,7 +185,7 @@ public class Consola {
         Grado grado = new GradoD("Grado D", 2, Modalidad.PRESENCIAL);
         String nombre = "Pepe Perez";
         int horas = 250;
-        
+
         try {
             do {
                 System.out.println("Introduce el codigo del ciclo formativo: ");
@@ -204,7 +205,7 @@ public class Consola {
             for (EspecialidadProfesorado especialidadProfesorado : EspecialidadProfesorado.values()) {
                 System.out.println(especialidadProfesorado.ordinal() + 1 + especialidadProfesorado.toString());
             }
-            opcion = Entrada.entero()-1;
+            opcion = Entrada.entero() - 1;
         } while (opcion < 0 || opcion > EspecialidadProfesorado.values().length);
 
         return EspecialidadProfesorado.values()[opcion];
@@ -217,7 +218,7 @@ public class Consola {
             for (Curso curso : Curso.values()) {
                 System.out.println(curso.ordinal() + 1 + curso.toString());
             }
-            opcion = Entrada.entero()-1;
+            opcion = Entrada.entero() - 1;
         } while (opcion < 0 || opcion > Curso.values().length);
 
 

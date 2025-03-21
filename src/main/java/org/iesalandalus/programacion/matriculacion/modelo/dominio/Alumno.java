@@ -216,7 +216,7 @@ public class Alumno {
 
 
     public String imprimir() {
-        return "Alumno: " + nombre +" DNI " + dni;
+        return "Alumno: " + nombre +", DNI " + dni;
     }
 
     @Override

@@ -65,19 +65,17 @@ public class Matricula {
     }
 
     private String asignaturasMatricula() {
-        String asignaturas = "";
+        StringBuilder asignaturas = new StringBuilder();
         for (int i = 0; i < coleccionAsignaturas.size(); i++) {
             if (coleccionAsignaturas.get(i) != null) {
-                asignaturas += coleccionAsignaturas.get(i).getNombre();
+                asignaturas.append(coleccionAsignaturas.get(i).getNombre());
             }
-            ;
             if (i < coleccionAsignaturas.size() - 1) {
-                asignaturas += (", ");
+                asignaturas.append(", ");
             }
         }
-        return asignaturas;
+        return asignaturas.toString();
     }
-
 
 
     public LocalDate getFechaAnulacion() {
@@ -194,9 +192,9 @@ public class Matricula {
 
     @Override
     public String toString() {
-        return alumno.imprimir() + " Matricula" +
+        return alumno.imprimir() + ", Matricula" +
                 ", idMatricula=" + idMatricula +
-                ", cursoAcademico='" + cursoAcademico + '\'' +
+                ", cursoAcademico='" + cursoAcademico +
                 ", fechaMatriculacion=" + fechaMatriculacion +
                 ", fechaAnulacion=" + fechaAnulacion +
                 ", coleccionAsignaturas=" + coleccionAsignaturas;
